@@ -1,15 +1,13 @@
-package main.java.com.codecool.myingatlan.model;
+package com.codecool.myingatlan.model;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.List;
 
-import static java.util.Calendar.AM;
-import static java.util.Calendar.PM;
 
 
 @Entity

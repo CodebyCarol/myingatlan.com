@@ -1,7 +1,17 @@
-package com.codecool.meetup.triangels;
+package com.codecool.myingatlan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.codecool.myingatlan.services.RealEstateService;
+import com.codecool.myingatlan.controller.RenderController;
+
+import static spark.Spark.*;
+import spark.template.thymeleaf.ThymeleafTemplateEngine;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 
 
@@ -9,6 +19,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MyIngatlan {
 
     public static void main(String[] args) {
+
+        RealEstateService realEstateService = new RealEstateService();
+        RenderController renderController = new RenderController();
+
         SpringApplication.run(MyIngatlan.class, args);
 
     }
@@ -16,20 +30,7 @@ public class MyIngatlan {
 
 
 
-//package com.codecool.meetup.triangels;
-//import static spark.Spark.*;
-//import static spark.debug.DebugScreen.enableDebugScreen;
-//
-//import com.codecool.meetup.triangels.controller.RenderController;
-//import com.codecool.meetup.triangels.services.*;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import spark.template.thymeleaf.ThymeleafTemplateEngine;
-//
-//import javax.persistence.EntityManager;
-//import javax.persistence.EntityManagerFactory;
-//import javax.persistence.Persistence;
-//
+
 //public class Server {
 //    private static final Logger logger = LoggerFactory.getLogger(Server.class);
 //

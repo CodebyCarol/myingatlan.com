@@ -1,7 +1,7 @@
-package main.java.com.codecool.myingatlan.services;
+package com.codecool.myingatlan.services;
 
-import main.java.com.codecool.myingatlan.model.RealEstate;
-import main.java.com.codecool.myingatlan.repository.RealEstateRepo;
+import com.codecool.myingatlan.model.RealEstate;
+import com.codecool.myingatlan.repository.RealEstateRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
