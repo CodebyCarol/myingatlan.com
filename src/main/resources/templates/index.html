@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Codecool" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TriAngels Meetup</title>
+
+    <!-- Latest compiled and minified Jquery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css"/>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+
+</head>
+
+<body>
+
+<div class="jumbotron text-center main-title">
+    <h1> Triangels Meetup</h1>
+</div>
+
+<div class="container">
+
+    <div th:include="main_header :: main-header"></div>
+
+    <div th:if="${list}" th:include="list :: list"></div>
+    <div th:if="${isSingleItem}" th:include="card :: card"></div>
+    <div th:if="${signup}" th:include="signup :: signup"></div>
+    <div th:if="${signUpResult}">
+        <h3 th:if="${isSuccess}">u can log in now, bruh</h3>
+        <h3 th:unless="${isSuccess}">u gotta choose another name</h3>
+    </div>
+
+
+</div>
+
+<img src="/img/flyingangel.png" id="flyingangel1"></img>
+<img src="/img/flyingangel.png" id="flyingangel2"></img>
+<img src="/img/flyingangel.png" id="flyingangel3"></img>
+
+</body>
+</html>

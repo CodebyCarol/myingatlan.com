@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+
+
+​<body>
+
+<div th:fragment="list">
+
+
+    <div th:if="${events}">
+        <h2>Events</h2>
+        <br/>
+        <button th:if="${isLogged != null}" data-toggle="collapse" class="btn btn-success" data-target="#createEvent">Add event</button>
+        <div id="createEvent" class="collapse">
+            <form th:if="${isLogged != null}" method="POST" action="/create/event">
+                <input type="text" name="name" value="" placeholder="Name"/>
+                <input type="text" name="place" value="" placeholder="Place"/>
+                <input type="text" name="descr" value="" placeholder="Description"/>
+                <br/>
+                <br/>
+                <p>Only for this group:</p>
+                <select class="btn btn-info" name="groupEvent">
+                    <div th:each="group: ${userInGroups}">
+                        <option th:value="${group.id}" th:text="${group.name}"></option>
+                    </div>
+                </select>
+                <br/>
+                <br/>
+                <p>Start time:</p>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-6'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' name="time" class="form-control" required="required"/>
+                                    <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker1').datetimepicker();
+                });
+            </script>
+                    </div>
+                </div>
+                <input class="btn btn-success" type="submit" value="Create it pls"/>
+            </form>
+        </div>
+        <br/>
+        <br/>
+    <div class="list-group">
+        <div th:each="event: ${eventlist}">
+            <a class="list-group-item list-group-item-action" th:text="${event.name}" th:href="'/event/' + ${event.getId()}"></a>
+        </div>
+    </div>
+    </div>
+    <div th:if="${user}">
+        <div class="list-group">
+            <h2>Users</h2>
+            <div th:each="user: ${users}">
+                <a class="list-group-item list-group-item-action" th:text="${user.name}" th:href="'/user/' + ${user.getId()}"></a>
+            </div>
+        </div>
+    </div>
+    <div th:if="${groups}">
+        <h2>Groups</h2>
+        <form th:if="${isLogged != null}" method="POST" action="/create/group">
+            <input type="text" name="name" value="" placeholder="Name"/>
+            <input type="text" name="descr" value="" placeholder="Description"/>
+            <input class="btn btn-success" type="submit" value="New"/>
+        </form>
+        <div class="list-group">
+            <div th:each="group: ${groups}">
+                <a th:if="${group.name} != 'everyone'" class="list-group-item list-group-item-action" th:text="${group.name}" th:href="'/group/'+${group.id}"></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+​
+
+</body>
+
+</html>
+
+​
+

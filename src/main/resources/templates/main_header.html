@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:fragment="main-header">
+        <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">MeetUp-TriAngel</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/events">Events</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/groups">Groups</a></li>
+            </ul>
+                <div th:if="${isLogged != null}">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a><span style="color: #7cfc00; "><h4 th:text="'Welcome, '+${isLogged}"></h4></span></a></li>
+                        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                </div>
+                <form th:unless="${isLogged != null}" method="POST" action="/login">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/sign-up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><input type="text" name="name" value="" placeholder="Name"/></li>
+                        <li><input type="password" name="password" value="" placeholder="Password"/></li>
+                        <li><button class="glyphicon glyphicon-log-in" type="submit" value="Login"/></li>
+                    </ul>
+                </form>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

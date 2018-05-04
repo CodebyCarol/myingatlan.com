@@ -1,0 +1,207 @@
+.glyphicon {
+    margin-right:5px;
+}
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.thumbnail img
+{
+    margin-top: 10px;
+}
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+.overlimit{
+    color: red;
+}
+
+#firstform
+{
+    float:left;
+    margin-right:5px;
+}
+
+#shopping-cart
+{
+
+    float:right;
+}
+
+#card-avatar
+{
+    max-width: 250px;
+}
+
+#mini-avatar
+{
+    max-width: 80px;
+}
+
+#intro
+{
+    height:120px;
+}
+
+#avatar
+{
+    size:120px;
+}
+
+.well-sm
+{
+    float: left;
+}
+.clearBoth { clear:both; }
+
+@keyframes title {
+    from {background-color: lawngreen; transform: rotate(0deg)}
+    to {background-color: lightskyblue; transform: rotate(10deg)}
+}
+
+.jumbotron {
+    animation-name: title;
+    animation-duration: 7s;
+    background-color: lightskyblue;
+    transform: rotate(10deg);
+}
+
+.isLogged
+{
+    font-family: fantasy;
+    font-size: 30px;
+    color: darkblue;
+}
+
+.wrapper .message {
+    position:relative;
+    bottom:200px;
+    left:300px;
+    visibility:hidden;
+}
+
+@keyframes errorMessage {
+    from {color: black; transform: rotate(0deg); font-size: 10px; bottom: 50px; left: 30px}
+    to {color: red; transform: rotate(30deg); font-size: 60px; bottom: 200px;left: 300px}
+    
+}
+
+@keyframes angelError {
+    from {bottom: 40px; left: 10px; height: 0px; width: 0px}
+    to {bottom: 40px; left: 120px; height: 150px; width: 150px}
+}
+
+@keyframes flyingangel1 {
+    from {bottom:0%; left:10%; transform: rotate(0deg); visibility: hidden}
+    to {bottom: 100%; left: 10%;transform: rotate(5deg); visibility: visible}
+}
+
+#flyingangel1 {
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+    animation-name: flyingangel1;
+    animation-duration: 600ms;
+    animation-iteration-count: 3;
+    height: 100px;
+    width: 100px;
+    visibility: hidden;
+}
+@keyframes flyingangel2 {
+    from {bottom:0%; left:15%; transform: rotate(0deg); visibility: hidden}
+    to {bottom: 100%; left: 15%;transform: rotate(5deg); visibility: visible}
+}
+
+#flyingangel2 {
+    position: absolute;
+    bottom: 0%;
+    left: 15%;
+    animation-name: flyingangel2;
+    animation-delay: 300ms;
+    animation-iteration-count: 2;
+    animation-duration: 600ms;
+    height: 100px;
+    width: 100px;
+    visibility: hidden;
+}
+
+@keyframes flyingangel3 {
+    from {bottom:0%; left:5%; transform: rotate(0deg); visibility: hidden}
+    to {bottom: 100%; left: 5%;transform: rotate(5deg); visibility: visible}
+}
+
+#flyingangel3 {
+    position: absolute;
+    bottom: 0%;
+    left: 5%;
+    animation-iteration-count: 3;
+    animation-name: flyingangel3;
+    animation-delay: 1s;
+    animation-duration: 600ms;
+    height: 100px;
+    width: 100px;
+    visibility: hidden;
+}
+
+
+.message {
+    color: red;
+    animation-name: errorMessage;
+    animation-duration: 10s;
+    position: relative;
+}
+
+
+.wrapper:hover .message {
+    font-size: 50px;
+    visibility:visible;
+}
