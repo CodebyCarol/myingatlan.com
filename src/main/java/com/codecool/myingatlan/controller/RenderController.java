@@ -23,25 +23,7 @@ public class RenderController {
         model.addAttribute("realestatelist", realEstateService.getAll());
         return "index";
     }
-
-
-  //      model.addAttribute("eventlist", eventService.sortByMostRecent());
-
-/*
-    @RequestMapping(value = "/list-all", method = RequestMethod.GET)
-    public String renderRealEstates(Model model) {
-        //TODO
-        model.addAttribute("realestates", realEstateService.getAll());
-
-        return "index";
-    }
-*/
-    @RequestMapping(value = "add-new", method = RequestMethod.GET)
-    public String renderAddNew(Model model) {
-        model.addAttribute("addnew", true);
-        return "index";
-    }
-
+    
 
     @RequestMapping(value = "/add-new", method = RequestMethod.POST)
     public String addNew(@RequestParam("description") String description,
