@@ -1,9 +1,8 @@
 package com.codecool.meetup.triangels;
 
-import com.codecool.meetup.triangels.model.*;
-import com.codecool.meetup.triangels.repository.*;
-import main.java.com.codecool.myingatlan.model.RealEstate;
-import main.java.com.codecool.myingatlan.repository.RealEstateRepo;
+
+import com.codecool.myingatlan.model.RealEstate;
+import com.codecool.myingatlan.repository.RealEstateRepo;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

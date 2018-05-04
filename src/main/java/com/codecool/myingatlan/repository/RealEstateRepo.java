@@ -7,5 +7,4 @@ public interface RealEstateRepo extends JpaRepository<RealEstate, Long> {
 
     RealEstate findFirstById(long id);
 
-    void save(RealEstate realEstate);
 }

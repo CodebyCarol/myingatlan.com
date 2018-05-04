@@ -14,7 +14,7 @@ public class RealEstateService {
     private RealEstateRepo realEstateRepo;
 
     public List<RealEstate> getAll() {
-        return RealEstateRepo.findAll();
+        return realEstateRepo.findAll();
     }
 
     public void addNewRealEstate(String descr, int distr, int sqm, int price) {

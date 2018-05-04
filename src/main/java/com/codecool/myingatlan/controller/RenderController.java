@@ -19,7 +19,7 @@ public class RenderController {
         //TODO
 //      model.addAttribute("isLogged", session.getAttribute("name")); // ha ez true, van session, ha nem, akkor nincs -
         model.addAttribute("list", true);
-        model.addAttribute("realestatelist", RealEstateService.getAll());
+        model.addAttribute("realestatelist", realEstateService.getAll());
         return "index";
     }
 
