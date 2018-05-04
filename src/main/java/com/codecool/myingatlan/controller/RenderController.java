@@ -14,6 +14,7 @@ public class RenderController {
     @Autowired
     private RealEstateService realEstateService;
 
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String renderIndexPage(Model model) {
         //TODO
@@ -26,15 +27,15 @@ public class RenderController {
 
   //      model.addAttribute("eventlist", eventService.sortByMostRecent());
 
-
+/*
     @RequestMapping(value = "/list-all", method = RequestMethod.GET)
     public String renderRealEstates(Model model) {
         //TODO
-        model.addAttribute("users", realEstateService.getAll());
+        model.addAttribute("realestates", realEstateService.getAll());
 
         return "index";
     }
-
+*/
     @RequestMapping(value = "add-new", method = RequestMethod.GET)
     public String renderAddNew(Model model) {
         model.addAttribute("addnew", true);

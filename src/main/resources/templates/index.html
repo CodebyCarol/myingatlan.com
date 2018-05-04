@@ -5,7 +5,7 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Meetup Clone 1.0</title>
+    <title>MyIngatlan.com</title>
 
     <!-- Latest compiled and minified Jquery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>    <!-- Latest compiled and minified CSS -->
@@ -32,111 +32,7 @@
 <body>
 
 <div class="container">
-    <h1>Meetup Clone</h1>
-</div>
-
-
-<div class="container">
-    <div th:fragment="list">
-
-        <div th:if="${events}">
-            <!--ADD NEW FLAT FOR SALE-->
-            <button data-toggle="collapse" class="btn btn-success" data-target="#createEvent">Add a new AD</button>
-            <div id="createEvent" class="collapse">
-                <form method="POST" action="/create/event">
-                    <input type="text" name="name" value="" placeholder="Name"/>
-                    <input type="text" name="place" value="" placeholder="Place"/>
-                    <input type="text" name="descr" value="" placeholder="Description"/>
-                    <br/>
-                    <br/>
-                    <p>Only for this group:</p>
-                    <select class="btn btn-info" name="groupEvent">
-                        <div th:each="group: ${userInGroups}">
-                            <option th:value="${group.id}" th:text="${group.name}"></option>
-                        </div>
-                    </select>
-                    <br/>
-                    <br/>
-                    <p>Start time:</p>
-                    <div class="container">
-                        <div class="row">
-                            <div class='col-sm-6'>
-                                <div class="form-group">
-                                    <div class='input-group date' id='datetimepicker1'>
-                                        <input type='text' name="time" class="form-control" required="required"/>
-                                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <script type="text/javascript">
-                                $(function () {
-                                    $('#datetimepicker1').datetimepicker();
-                                });
-                            </script>
-                        </div>
-                    </div>
-                    <input class="btn btn-success" type="submit" value="Create it pls"/>
-                </form>
-            </div>
-            <br/>
-            <!--END OF ADD NEW EVENT-->
-
-            <!--EVENTLIST-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 col-sm-8">
-                        <!--div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2"-->
-
-                        <!-- Fluid width widget -->
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <span class="glyphicon glyphicon-calendar"></span> 
-                                    Upcoming Events
-                                </h3>
-                            </div>
-                            <div th:each="event: ${eventlist}">
-                                <div class="panel-body">
-                                    <ul class="media-list">
-                                        <li class="media">
-                                            <div class="media-left">
-                                                <!--div class="panel panel-danger text-center date">
-                                                    <div class="panel-heading month">
-                                                <span class="panel-title strong">
-                                                    Mar
-                                                </span>
-                                                    </div>
-                                                    <div class="panel-body day text-danger">
-                                                        <a th:text="${event.time}"></a>
-                                                    </div>
-                                                </div-->
-                                            </div>
-
-                                            <div class="media-body">
-                                                <h4 class="media-heading">
-                                                    <a th:text="${event.name}" th:href="'/event/' + ${event.getId()}"></a>
-                                                </h4>
-                                                <p th:text="${event.description}">
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-default btn-block">More Events »</a>
-                        </div>
-                        <!-- End fluid width widget -->
-                    </div>
-                    <div class="container">
-                        <img class="img-responsive" src="/pictures/alter.jpg" width="550" height="334"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+    <h1>MyIngatlan.com</h1>
 </div>
 
 </body>
