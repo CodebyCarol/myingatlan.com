@@ -2,10 +2,10 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <meta name="author" content="Codecool" />
+    <meta name="author" content="Molnar Katalin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TriAngels Meetup</title>
+    <title>MyIngatlan</title>
 
     <!-- Latest compiled and minified Jquery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>    <!-- Latest compiled and minified CSS -->
@@ -30,27 +30,14 @@
 <body>
 
 <div class="jumbotron text-center main-title">
-    <h1> Triangels Meetup</h1>
+    <h1>MyIngatlan.com</h1>
 </div>
 
 <div class="container">
 
-    <div th:include="main_header :: main-header"></div>
-
-    <div th:if="${list}" th:include="list :: list"></div>
-    <div th:if="${isSingleItem}" th:include="card :: card"></div>
-    <div th:if="${signup}" th:include="signup :: signup"></div>
-    <div th:if="${signUpResult}">
-        <h3 th:if="${isSuccess}">u can log in now, bruh</h3>
-        <h3 th:unless="${isSuccess}">u gotta choose another name</h3>
-    </div>
 
 
 </div>
-
-<img src="/img/flyingangel.png" id="flyingangel1"></img>
-<img src="/img/flyingangel.png" id="flyingangel2"></img>
-<img src="/img/flyingangel.png" id="flyingangel3"></img>
 
 </body>
 </html>
