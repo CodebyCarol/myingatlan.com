@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 
 @Controller
 public class RenderController {
@@ -15,7 +18,7 @@ public class RenderController {
     private RealEstateService realEstateService;
 
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = GET)
     public String renderIndexPage(Model model) {
         //TODO
 //      model.addAttribute("isLogged", session.getAttribute("name")); // ha ez true, van session, ha nem, akkor nincs -
@@ -25,7 +28,8 @@ public class RenderController {
     }
 
 
-    @RequestMapping(value = "/addnew", method = RequestMethod.POST)
+    @RequestMapping(value = "/addnew", method = POST)
+    @ResponseBody
     public String addNew(@RequestParam("description") String description,
                          @RequestParam("squaremeter") int squaremeter,
                          @RequestParam("district") int district,
@@ -36,13 +40,17 @@ public class RenderController {
             return "addnew";
         }
 
-    @RequestMapping(value = "/addnew", method = RequestMethod.GET)
+    @RequestMapping(value = "/addnew", method = GET)
     public String renderAddNewPage(Model model) {
         model.addAttribute("realestates", realEstateService.getAll());
         return "addnew";
     }
 
-
+    @RequestMapping(value = "/list", method = GET)
+    public String listAll(Model model) {
+        model.addAttribute("listestates", realEstateService.getAll());
+        return "list";
+    }
 
 }
 

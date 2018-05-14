@@ -31,13 +31,11 @@
 
 <body>
 
-<div class="container">
+    <div class="container">
+        <div th:include="header::header"></div>
 
-    <div th:include="header::header"></div>
-    <div th:if="${addnew}" th:include="addnew :: addnew"></div>
-</div>
-
-
+        <div th:if="${addnew}" th:include="addnew :: addnew"></div>
+    </div>
 
 </body>
 </html>
