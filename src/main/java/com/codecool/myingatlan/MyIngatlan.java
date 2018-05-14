@@ -1,13 +1,17 @@
 package com.codecool.myingatlan;
 
+
+import com.codecool.myingatlan.repository.RealEstateRepo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.codecool.myingatlan.services.RealEstateService;
+import com.codecool.myingatlan.repository.RealEstateRepo;
 import com.codecool.myingatlan.controller.RenderController;
 
+import com.codecool.myingatlan.PopDB;
+
 import static spark.Spark.*;
-import spark.template.thymeleaf.ThymeleafTemplateEngine;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,12 +22,18 @@ import javax.persistence.Persistence;
 @SpringBootApplication
 public class MyIngatlan {
 
+
     public static void main(String[] args) {
 
+
+        // setting up instances
         RealEstateService realEstateService = new RealEstateService();
         RenderController renderController = new RenderController();
 
+
         SpringApplication.run(MyIngatlan.class, args);
+        PopDB populated = new PopDB();
+
 
     }
 }
@@ -36,20 +46,6 @@ public class MyIngatlan {
 //
 //    public static void main(String[] args) throws IllegalArgumentException {
 //
-//        // default server settings
-//        logger.info("Starting server..");
-//        //SETTING UP INSTANCES//
-//        ///////////////////////////////////////////////////////////////////////////////
-//        Utility utility = new Utility();
-//        EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("triangelMeetup");
-//        EntityManager entityManager = emFactory.createEntityManager();
-//        UserService userService = new UserService(entityManager, utility);
-//        InterestService interestService = new InterestService(entityManager);
-//        GroupService groupService = new GroupService(entityManager);
-//        EventService eventService = new EventService(entityManager);
-//        CommentService commentService = new CommentService(entityManager);
-//        RenderController renderController = new RenderController(commentService, eventService,
-//                groupService, interestService, userService);
 //       PopDB popDB = new PopDB(entityManager);
 //       popDB.populateDB();
 //        ///////////////////////////////////////////////////////////////////////////////

@@ -23,9 +23,9 @@ public class RenderController {
         model.addAttribute("realestatelist", realEstateService.getAll());
         return "index";
     }
-    
 
-    @RequestMapping(value = "/add-new", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/addnew", method = RequestMethod.POST)
     public String addNew(@RequestParam("description") String description,
                          @RequestParam("squaremeter") int squaremeter,
                          @RequestParam("district") int district,
@@ -33,7 +33,16 @@ public class RenderController {
                          Model model) {
         realEstateService.addNewRealEstate(description, district, squaremeter, price);
 
-            return "redirect:login";
+            return "addnew";
         }
+
+    @RequestMapping(value = "/addnew", method = RequestMethod.GET)
+    public String renderAddNewPage(Model model) {
+        model.addAttribute("realestates", realEstateService.getAll());
+        return "addnew";
+    }
+
+
+
 }
 

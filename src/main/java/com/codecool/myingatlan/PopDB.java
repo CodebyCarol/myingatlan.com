@@ -1,4 +1,4 @@
-package com.codecool.meetup.triangels;
+package com.codecool.myingatlan;
 
 
 import com.codecool.myingatlan.model.RealEstate;
@@ -10,6 +10,9 @@ import java.util.List;
 
 @Component
 public class PopDB {
+
+    public PopDB() {
+    }
 
     public PopDB(RealEstateRepo realEstateRepo) {
 
@@ -24,6 +27,8 @@ public class PopDB {
         realEstateRepo.save(realEstate2);
         realEstateRepo.save(realEstate3);
         realEstateRepo.save(realEstate4);
+
+
     }
 
 
