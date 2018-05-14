@@ -33,6 +33,8 @@ public class RealEstate {
         this.price = price;
     }
 
+    public RealEstate() {};
+
     public Long getId() {
         return id;
     }

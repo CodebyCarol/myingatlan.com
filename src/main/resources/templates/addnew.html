@@ -6,13 +6,32 @@
 <div th:fragment ="addnew">
 
     <h1>this is the add-new page</h1>
+
+    <div class="col-md-6">
+        <div class="row myborder">
+            <form method="POST" action="/addnew">
+                <h4 style="color: #7EB59E; margin: initial; margin-bottom: 10px;">Add new Ad</h4>
+                <!--description-->
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
+                    <input type="text" name="description" value="" placeholder="description" size="60" maxlength="255" class="form-control"/></div>
+                <!--district-->
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope mycolor"></i></span>
+                    <input type="number" name="district" value="" placeholder="District" size="60" maxlength="255" class="form-control"/></div>
+                <!--sqm-->
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock mycolor"></i></span>
+                    <input type="number" name="sqm" value="" placeholder="SQM" size="60" maxlength="255" class="form-control"/></div>
+                <!--price-->
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil mycolor"></i></span>
+                    <input type="number" name="price" value="" placeholder="Price" size="60" maxlength="255" class="form-control"/></div>
+            </form>
+        </div>
+    </div>
+
     <a th:href="list"> list all estates</a>
-
-    <button>add new</button>
-
-
-
-
 
 </div>
 </body>
