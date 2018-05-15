@@ -47,7 +47,7 @@ public class RenderController {
 
     @RequestMapping(value = "/list", method = GET)
     public String listAll(Model model) {
-        model.addAttribute("listestates", realEstateService.getAll());
+        model.addAttribute("realEstates", realEstateService.getAll());
         return "list";
     }
 

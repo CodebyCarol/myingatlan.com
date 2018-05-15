@@ -9,9 +9,8 @@
 
     <div class="list-group">
         <h2>Realestates</h2>
-        <div th:each="realestate :  ${realestates}">
-            <a th:href="${realestate.getDescription()}">
-            </a>
+        <div th:each="realestate :  ${realEstates}">
+            <a th:href="${realestate.getId()}" th:text="${realestate.getDescription()}"></a>
         </div>
 
 

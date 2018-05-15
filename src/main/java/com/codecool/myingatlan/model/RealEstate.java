@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="realestates")
 public class RealEstate {
 
     @Id
@@ -32,4 +31,8 @@ public class RealEstate {
     }
 
     public String getDescription() {return description;}
+
+    public int getDistrict() {
+        return district;
+    }
 }
