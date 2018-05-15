@@ -7,6 +7,12 @@
 
     <h1>HERE COMES THE LIST</h1>
 
+    <div class="list-group">
+        <h2>Realestates</h2>
+        <div th:each="peace:${realEstates}">
+            <a th:text="${peace.description}"></a>
+        </div>
+    </div>
 
 </div>
 </body>

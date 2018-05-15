@@ -33,11 +33,9 @@ public class RenderController {
     public String addNew(@RequestParam("description") String description,
                          @RequestParam("squaremeter") int squaremeter,
                          @RequestParam("district") int district,
-                         @RequestParam("price") int price,
-                         Model model) {
+                         @RequestParam("price") int price) {
         realEstateService.addNewRealEstate(description, district, squaremeter, price);
-
-            return "addnew";
+            return "redirect: addnew";
         }
 
     @RequestMapping(value = "/addnew", method = GET)

@@ -35,6 +35,8 @@ public class RealEstate {
 
     public RealEstate() {};
 
+
+
     public Long getId() {
         return id;
     }
