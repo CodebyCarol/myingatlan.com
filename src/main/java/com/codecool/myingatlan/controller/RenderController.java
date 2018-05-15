@@ -35,7 +35,7 @@ public class RenderController {
                          @RequestParam("district") int district,
                          @RequestParam("price") int price) {
         realEstateService.addNewRealEstate(description, district, squaremeter, price);
-            return "redirect: addnew";
+            return "list";
         }
 
     @RequestMapping(value = "/addnew", method = GET)

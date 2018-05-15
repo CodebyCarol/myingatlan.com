@@ -22,19 +22,15 @@ public class RealEstate {
     private int price;
 
 
-    @ManyToMany
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private List<RealEstate> realEstates = new ArrayList<>();
-
     public RealEstate(String description, int district, int sqm, int price) {
         this.description = description;
         this.district = district;
         this.squaremeter = sqm;
         this.price = price;
+
     }
 
     public RealEstate() {};
-
 
 
     public Long getId() {
