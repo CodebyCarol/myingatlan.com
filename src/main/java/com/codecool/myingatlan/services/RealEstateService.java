@@ -22,7 +22,4 @@ public class RealEstateService {
         realEstateRepo.save(realEstate);
     }
 
-
-
-
 }

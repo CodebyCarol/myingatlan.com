@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -30,12 +31,12 @@ public class RenderController {
 
     @RequestMapping(value = "/addnew", method = POST)
     @ResponseBody
-    public String addNew(@RequestParam("description") String description,
-                         @RequestParam("squaremeter") int squaremeter,
-                         @RequestParam("district") int district,
-                         @RequestParam("price") int price) {
+    public RedirectView addNew(@RequestParam("description") String description,
+                               @RequestParam("squaremeter") int squaremeter,
+                               @RequestParam("district") int district,
+                               @RequestParam("price") int price) {
         realEstateService.addNewRealEstate(description, district, squaremeter, price);
-            return "list";
+            return new RedirectView("list");
         }
 
     @RequestMapping(value = "/addnew", method = GET)

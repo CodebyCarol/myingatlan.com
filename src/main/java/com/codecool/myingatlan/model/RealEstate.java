@@ -1,16 +1,10 @@
 package com.codecool.myingatlan.model;
 
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-
-import java.util.List;
-
 
 
 @Entity
+@Table(name="realestates")
 public class RealEstate {
 
     @Id
@@ -36,4 +30,6 @@ public class RealEstate {
     public Long getId() {
         return id;
     }
+
+    public String getDescription() {return description;}
 }
