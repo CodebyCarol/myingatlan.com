@@ -35,4 +35,12 @@ public class RealEstate {
     public int getDistrict() {
         return district;
     }
+
+    public int getSquaremeter() {
+        return squaremeter;
+    }
+
+    public int getPrice() {
+        return price;
+    }
 }
