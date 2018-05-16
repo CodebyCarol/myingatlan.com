@@ -1,22 +1,11 @@
 package com.codecool.myingatlan;
 
 
-import com.codecool.myingatlan.repository.RealEstateRepo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.codecool.myingatlan.services.RealEstateService;
-import com.codecool.myingatlan.repository.RealEstateRepo;
-import com.codecool.myingatlan.controller.RenderController;
-
-import com.codecool.myingatlan.PopDB;
-
-import static spark.Spark.*;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
+import com.codecool.myingatlan.controller.RealEstateController;
 
 
 @SpringBootApplication
@@ -28,7 +17,7 @@ public class MyIngatlan {
 
         // setting up instances
         RealEstateService realEstateService = new RealEstateService();
-        RenderController renderController = new RenderController();
+        RealEstateController realEstateController = new RealEstateController();
 
 
         SpringApplication.run(MyIngatlan.class, args);

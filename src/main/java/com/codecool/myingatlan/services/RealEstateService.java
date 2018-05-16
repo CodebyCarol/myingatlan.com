@@ -14,6 +14,7 @@ public class RealEstateService {
     private RealEstateRepo realEstateRepo;
 
     public List<RealEstate> getAll() {
+
         return realEstateRepo.findAll();
     }
 
@@ -22,4 +23,7 @@ public class RealEstateService {
         realEstateRepo.save(realEstate);
     }
 
+    public RealEstate getOne(Long id){
+        return realEstateRepo.findFirstById(id);
+    }
 }

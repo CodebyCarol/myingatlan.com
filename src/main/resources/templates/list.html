@@ -17,6 +17,14 @@
         <div th:each="realestate :  ${realEstates}">
             <a th:href="${realestate.getId()}" th:text="${realestate.getDescription()}"></a>
         </div>
+        <div th:if="${id}">
+            <h3 th:text="'ID of this property: '+${realestate.getId()}"></h3>
+            <!--th:text="'Price in HUF: '+${realestate.getPice()}"-->
+            <!--p th:text="'This property is in district: '+${realestate.getDistrict()}"></p>
+            <p th:text="'Description: ' +${realestate.getDescription()}"></p>
+            <p th:text="'Area: '+${realestate.getSquaremeter()}+' squaremeter'"></p-->
+
+        </div>
 
 
 

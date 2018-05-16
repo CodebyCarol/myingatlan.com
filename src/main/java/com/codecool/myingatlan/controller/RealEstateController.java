@@ -1,6 +1,7 @@
 package com.codecool.myingatlan.controller;
 
 
+import com.codecool.myingatlan.model.RealEstate;
 import com.codecool.myingatlan.services.RealEstateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +14,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 @Controller
-public class RenderController {
+public class RealEstateController {
 
     @Autowired
     private RealEstateService realEstateService;
@@ -50,6 +51,14 @@ public class RenderController {
         model.addAttribute("realEstates", realEstateService.getAll());
         return "list";
     }
+
+    @RequestMapping(value = "/{id}", method = GET)
+    public String listOne(@PathVariable("id")Long id, Model model) {
+        RealEstate item = realEstateService.getOne(id);
+        model.addAttribute("realestate", item);
+        return "list";
+    }
+
 
 }
 
