@@ -21,7 +21,7 @@ public class MyIngatlan {
 
 
         SpringApplication.run(MyIngatlan.class, args);
-        PopDB populated = new PopDB();
+        // PopDB populated = new PopDB();
 
 
     }

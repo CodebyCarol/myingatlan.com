@@ -19,6 +19,7 @@ public class RealEstateService {
     }
 
     public void addNewRealEstate(String descr, int distr, int sqm, int price) {
+        // TODO meghivni a python APIt - http get requestet küld a python apinak (localhost:5xxx/calculate/id/?...-nek)
         RealEstate realEstate = new RealEstate(descr, distr, sqm, price);
         realEstateRepo.save(realEstate);
     }
