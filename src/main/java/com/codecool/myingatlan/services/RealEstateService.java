@@ -27,4 +27,6 @@ public class RealEstateService {
     public RealEstate getOne(Long id){
         return realEstateRepo.findFirstById(id);
     }
+
+
 }

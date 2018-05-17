@@ -13,7 +13,11 @@ public class RealEstate {
     private int district;
     private int squaremeter;
     private int price;
-
+    /*
+    TODO:
+    give a title with max. char in form, and a longer description, and maybe
+    some picture uploading would be nice also
+    */
 
     public RealEstate(String description, int district, int sqm, int price) {
         this.description = description;
@@ -24,7 +28,6 @@ public class RealEstate {
     }
 
     public RealEstate() {};
-
 
     public Long getId() {
         return id;

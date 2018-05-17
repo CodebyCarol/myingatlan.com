@@ -7,6 +7,10 @@ public interface RealEstateRepo extends JpaRepository<RealEstate, Long> {
 
     RealEstate findFirstById(long id);
 
+    //for future search option
     RealEstate findDistinctFirstByDescriptionIsContaining(String descr);
+
+
+
 
 }
